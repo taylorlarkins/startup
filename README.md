@@ -1,8 +1,13 @@
-# startup
-Welcome to my cs260 start up project!
+# Color Grid
 
-This is a big work in progress...
+### Design
+Introducting Color Grid! Color Grid is an online application that allows you to easily create and view pixel art! After signing in, your are presented with a 10 x 10 grid to color in as you wish. With a variety of colors to choose from, the possibilites are practically endless! You can title your work and upload it for your friends to see. In the gallery you can view recently created artwork made by the community.
 
-From this initial assignment, I learned how to pull, push, and commit changes between my dev environment and GitHub.
+![Click here to view a sketch](startup-sketch.jpg)
 
-I also learned how to create and clone repositories.
+### Key Features
+* Account features/Secure login
+* Interactive coloring grid
+* Gallery of community drawings
+* Real-time updates when users upload drawings
+* Titles and time stamps on artwork
