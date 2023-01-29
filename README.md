@@ -11,3 +11,10 @@ Introducting Color Grid! Color Grid is an online application that allows you to 
 * Gallery of community drawings
 * Real-time updates when users upload drawings
 * Titles and time stamps on artwork
+
+### Things to Remember
+* IP Address of Server: http://3.18.73.173
+
+### Things I've Learned
+* How to utilize Git and Github for version control
+* How to set up and remote shell into a server
