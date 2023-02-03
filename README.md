@@ -13,7 +13,7 @@ Introducting Color Grid! Color Grid is an online application that allows you to 
 * Titles and time stamps on artwork
 
 ### Things to Remember
-* IP Address of Server: http://3.18.73.173
+* Domain: tlarki.org
 
 ### Things I've Learned
 * How to utilize Git and Github for version control
