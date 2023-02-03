@@ -20,3 +20,4 @@ Introducting Color Grid! Color Grid is an online application that allows you to 
 * How to set up and remote shell into a server
 * How to purchase a domain name and associate it with an IP address
 * How to create DNS records for a domain name
+* How to obtain and renew web certificates using Caddy
