@@ -13,7 +13,7 @@ Introducting Color Grid! Color Grid is an online application that allows you to 
 * Titles and time stamps on artwork
 
 ### Things to Remember
-* Domain: tlarki.org
+* Domain: [https://tlarki.org](https://tlarki.org)
 
 ### Things I've Learned
 * How to utilize Git and Github for version control
@@ -21,3 +21,6 @@ Introducting Color Grid! Color Grid is an online application that allows you to 
 * How to purchase a domain name and associate it with an IP address
 * How to create DNS records for a domain name
 * How to obtain and renew web certificates using Caddy
+* How to use HTML to effectivley structure a web page
+* How to seperate mangagment of a project into development and production environments
+* How to utilize deployment scripts to easily update a production environment
