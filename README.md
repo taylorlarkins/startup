@@ -24,3 +24,5 @@ Introducting Color Grid! Color Grid is an online application that allows you to 
 * How to use HTML to effectivley structure a web page
 * How to seperate mangagment of a project into development and production environments
 * How to utilize deployment scripts to easily update a production environment
+* How to use CSS to further structure websites and enhance a user's visual experience
+* How to take advantage of CSS Frameworks such as Bootstrap to quickly add quality CSS to a project
