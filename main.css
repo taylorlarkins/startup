@@ -1,3 +1,78 @@
-* {
-   background-color: beige;
+body {
+   display: flex;
+   flex-direction: column;
+   min-width: 375px;
 }
+
+header {
+   flex: 56px;
+}
+
+main {
+   flex: 1 calc(100vh - 86px);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-around;
+   background-color: #EFE6DD;
+}
+
+footer {
+   flex: 0 30px;
+   background-color: #231F20;
+}
+
+footer div {
+   background-color: #231F20;
+}
+
+footer a {
+   float: right;
+}
+
+nav {
+   background-color: #231F20;
+}
+
+.navbar-brand {
+   padding-left: 0.3em;
+}
+
+#login {
+   background-color: #231F20;
+   border-radius: 10px;
+   height: 400px;
+   width: 400px;
+}
+
+#welcome {
+   padding-top: 0.5em;
+}
+
+#title:hover {
+   animation: color-change 3s linear 0s infinite;
+}
+
+@media (max-height: 600px) {
+   header {
+     display: none;
+   }
+   footer {
+     display: none;
+   }
+   main {
+     flex: 1 100vh;
+   }
+ }
+
+ @keyframes color-change {
+   from { text: rgb(248, 249, 250); }
+   12.5% { color: red; }
+   25% { color: orange; }
+   37.5% { color: yellow; }
+   50% { color: green; }
+   62.5% { color: blue; }
+   75% { color: purple; }
+   87.5% { color: pink; }
+   to { color: rgb(248, 249, 250); }
+ }

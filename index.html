@@ -13,6 +13,40 @@
       />
    </head>
    <body>
-      <div></div>
+      <header class="container-fluid">
+         <nav class="navbar navbar-expand fixed-top navbar-dark">
+            <a id="title" class="navbar-brand" href="#">Color Grid</a>
+            <div id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="index.html">Home</a>
+                <a class="nav-item nav-link" href="create.html">Create</a>
+                <a class="nav-item nav-link" href="gallery.html">Gallery</a>
+                <a class="nav-item nav-link" href="about.html">About</a>
+              </div>
+            </div>
+          </nav>
+      </header>
+
+      <main class="container-fluid">
+         <div id="login" class="container-fluid text-light">
+            <h3 id="welcome">Welcome!</h3>
+            <hr>
+            <h5 id="log-below" style="margin-bottom: 40px;">Login to Color Grid below</h5>
+            <form method="get" action="create.html">
+               <h6>Username:</h6>
+               <input style="margin-bottom: 20px;">
+               <h6>Password:</h6>
+               <input type="password" style="margin-bottom: 60px;">
+               <button style="display: block;" class="btn btn-primary">Login</button>
+            </form>
+         </div>
+      </main>
+
+      <footer class="text-light">
+         <div class="container-fluid">
+            <span class="text-reset">Taylor Larkins</span>
+            <a href="https://github.com/taylorlarkins/startup" class="text-reset">Github</a>
+         </div>
+      </footer>
    </body>
 </html>
