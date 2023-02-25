@@ -45,6 +45,71 @@ nav {
    width: 400px;
 }
 
+#create-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-evenly;
+   background-color: #231F20;
+   border-radius: 10px;
+   height: 475px;
+   width: 475px;
+}
+
+.color-selector {
+   display: inline;
+   width: 25px;
+   height: 25px;
+   border-radius: 100%;
+   border: 0px;
+}
+
+#red-btn {
+   background-color: red;
+}
+
+#orange-btn {
+   background-color: orange;
+}
+
+#yellow-btn {
+   background-color: yellow;
+}
+
+#green-btn {
+   background-color: green;
+}
+
+#blue-btn {
+   background-color: blue;
+}
+
+#purple-btn {
+   background-color: purple;
+}
+
+#pink-btn {
+   background-color: pink;
+}
+
+#brown-btn {
+   background-color: brown;
+}
+
+#black-btn {
+   background-color: black;
+}
+
+#grid {
+   background-color: white;
+}
+
+td {
+   border: 2px solid #231F20 !important;
+   width: 30px;
+   height: 30px;
+}
+
 #welcome {
    padding-top: 0.5em;
 }
@@ -52,6 +117,7 @@ nav {
 #title:hover {
    animation: color-change 3s linear 0s infinite;
 }
+
 
 @media (max-height: 600px) {
    header {
