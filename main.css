@@ -125,8 +125,34 @@ td {
    padding-top: 0.5em;
 }
 
+#about {
+   width: 80%;
+   height: 60%;
+   border-radius: 10px;
+   background-color: #231F20;
+}
+
+#about-title {
+   color: rgb(248, 249, 250);
+   animation: color-change 3s linear 0s infinite;
+}
+
+#alt-about {
+   display: none;
+   text-align: center;
+}
+
 #title:hover {
    animation: color-change 3s linear 0s infinite;
+}
+
+@media (max-width: 800px) {
+   #about {
+      display: none;
+   }
+   #alt-about {
+      display: block;
+   }
 }
 
 
@@ -143,7 +169,7 @@ td {
  }
 
  @keyframes color-change {
-   from { text: rgb(248, 249, 250); }
+   from { color: rgb(248, 249, 250); }
    12.5% { color: red; }
    25% { color: orange; }
    37.5% { color: yellow; }
@@ -152,4 +178,16 @@ td {
    75% { color: purple; }
    87.5% { color: pink; }
    to { color: rgb(248, 249, 250); }
+ }
+
+ @keyframes mod-color-change {
+   from { color: #231F20; }
+   12.5% { color: red; }
+   25% { color: orange; }
+   37.5% { color: yellow; }
+   50% { color: green; }
+   62.5% { color: blue; }
+   75% { color: purple; }
+   87.5% { color: pink; }
+   to { color: #231F20; }
  }
