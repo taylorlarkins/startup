@@ -45,7 +45,7 @@ nav {
    width: 400px;
 }
 
-#create-container {
+.grid-container {
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -102,6 +102,17 @@ nav {
 
 #grid {
    background-color: white;
+}
+
+#details {
+   text-align: center;
+}
+
+.art-display {
+   display: inline;
+   background-color: #231F20;
+   width: 200px;
+   height: 300px;
 }
 
 td {
