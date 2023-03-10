@@ -66,38 +66,47 @@ nav {
 
 #red-btn {
    background-color: red;
+   border: solid 2px white;
 }
 
 #orange-btn {
    background-color: orange;
+   border: solid 2px orange;
 }
 
 #yellow-btn {
    background-color: yellow;
+   border: solid 2px yellow;
 }
 
 #green-btn {
    background-color: green;
+   border: solid 2px green;
 }
 
 #blue-btn {
    background-color: blue;
+   border: solid 2px blue;
 }
 
 #purple-btn {
    background-color: purple;
+   border: solid 2px purple;
 }
 
 #pink-btn {
    background-color: pink;
+   border: solid 2px pink;
 }
 
 #brown-btn {
    background-color: brown;
+   border: solid 2px brown;
 }
 
 #black-btn {
    background-color: black;
+   border: solid 2px black;
 }
 
 #grid {
