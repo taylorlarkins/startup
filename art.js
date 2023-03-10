@@ -9,7 +9,7 @@ class Art {
       this.artist = localStorage.getItem("current_user");
       this.selected_color = "red";
       let temp = new Date();
-      this.date = `${temp.getMonth() + 1}.${temp.getDay()}.${temp.getFullYear}`;
+      this.date = `${temp.getMonth() + 1}.${temp.getDate()}.${temp.getFullYear()}`;
       
       //Add 'click' eventListeners to all grid squares
       this.grid = document.querySelectorAll("td");
@@ -31,6 +31,36 @@ class Art {
       document.querySelector(`#${this.selected_color}-btn`).style.border = `solid 2px ${this.selected_color}`;
       this.selected_color = color;
       document.querySelector(`#${this.selected_color}-btn`).style.border = "solid 2px white";
+   }
+
+   submit() {
+      let color_arr = [];
+      this.grid.forEach((e) => {
+         color_arr.push(e.style.background);
+      })
+
+      let t = document.getElementById('art-title').value;
+      if(t === "") {
+         t = 'Untitled Creation'
+      }
+      
+      let creation = {
+         title: t,
+         artist: this.artist,
+         date: this.date,
+         grid: color_arr
+      };
+
+      let gallery = localStorage.getItem('gallery');
+      if(gallery === null) {
+         localStorage.setItem('gallery', JSON.stringify({creations: []}));
+         gallery = localStorage.getItem('gallery');
+      }
+      gallery = JSON.parse(gallery);
+      gallery.creations.push(creation);
+      localStorage.setItem('gallery', JSON.stringify(gallery));
+
+      window.location.href = "gallery.html";
    }
 }
 
