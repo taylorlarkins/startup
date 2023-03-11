@@ -52,6 +52,6 @@ function update_buttons() {
       document.getElementById('prev-btn').disabled = true;
    }
    if(size === 1) {
-      document.getElementById('prev-btn').disabled = true;
+      document.getElementById('rand-btn').disabled = true;
    }
 }
