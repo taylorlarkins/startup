@@ -28,5 +28,5 @@ Introducting Color Grid! Color Grid is an online application that allows you to 
 * How to use media queries to adjust a page according to a user's device or window size
 * How to take advantage of CSS Frameworks such as Bootstrap to quickly add quality CSS to a project
 * How to use variables, conditionals, loops, arrays, functions, classes, objects, and more to program in JavaScript
-* How to use JavaScript to edit the DOM
+* How to use JavaScript to dynamically edit the DOM
 * How to utilize JavaScript promises for asynchronous programming
