@@ -109,6 +109,11 @@ nav {
    border: solid 2px black;
 }
 
+#white-btn {
+   background-color: white;
+   border: solid 2px white;
+}
+
 #grid {
    background-color: white;
 }

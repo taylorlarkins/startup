@@ -7,7 +7,7 @@ class Art {
    grid;
    date;
    selected_color;
-   colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'pink', 'brown', 'black'];
+   colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'pink', 'brown', 'black', 'white'];
 
    constructor() {
       this.artist = localStorage.getItem("current_user");
@@ -34,7 +34,7 @@ class Art {
    select_color(color) {
       document.querySelector(`#${this.selected_color}-btn`).style.border = `solid 2px ${this.selected_color}`;
       this.selected_color = color;
-      document.querySelector(`#${this.selected_color}-btn`).style.border = "solid 2px white";
+      document.querySelector(`#${this.selected_color}-btn`).style.border = `solid 2px ${color === 'white' ? 'black' : 'white'}`;
    }
 
    submit() {
