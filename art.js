@@ -1,3 +1,7 @@
+if(localStorage.getItem('current_user') === null) {
+   localStorage.setItem('current_user', 'Anonymous')
+}
+
 class Art {
    artist;
    grid;
