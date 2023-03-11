@@ -44,10 +44,14 @@ function random_piece() {
 function update_buttons() {
    document.getElementById('next-btn').disabled = false;
    document.getElementById('prev-btn').disabled = false;
+   document.getElementById('rand-btn').disabled = false;
    if(current_piece === 0) {
       document.getElementById('next-btn').disabled = true;
    }
    if(current_piece === size - 1) {
+      document.getElementById('prev-btn').disabled = true;
+   }
+   if(size === 1) {
       document.getElementById('prev-btn').disabled = true;
    }
 }
