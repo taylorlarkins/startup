@@ -1,0 +1,15 @@
+{
+  "name": "startup",
+  "version": "1.0.0",
+  "description": "### Design Introducting Color Grid! Color Grid is an online application that allows you to easily create and view pixel art! After signing in, your are presented with a 10 x 10 grid to color in as you wish. With a variety of colors to choose from, the possibilites are practically endless! You can title your work and upload it for your friends to see. In the gallery you can view recently created artwork made by the community.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
