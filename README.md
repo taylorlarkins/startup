@@ -10,7 +10,7 @@ Introducting Color Grid! Color Grid is an online application that allows you to 
 * Interactive coloring grid
 * Gallery of community drawings
 * Real-time updates when users upload drawings
-* Titles and time stamps on artwork
+* Titles and date stamps on artwork
 
 ### Things to Remember
 * Domain: [https://tlarki.org](https://tlarki.org)
@@ -30,3 +30,7 @@ Introducting Color Grid! Color Grid is an online application that allows you to 
 * How to use variables, conditionals, loops, arrays, functions, classes, objects, and more to program in JavaScript
 * How to use JavaScript to dynamically edit the DOM
 * How to utilize JavaScript promises for asynchronous programming
+* How to configure a project to be compatible with Node.js and npm
+* How to install and use npm packages
+* How to use Express to create an HTTP service
+* How to create and utilize service endpoints
