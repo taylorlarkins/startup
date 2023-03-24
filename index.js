@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const DB = require('./database.js');
 
 // The service port. In production the application is statically hosted by the service on the same port.
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
@@ -12,23 +13,32 @@ app.use(express.static('public'));
 var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
-// IMPLEMENT ENDPOINTS _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+//GetGallery
+apiRouter.get('/gallery', async (_req, res) => {
+  const gallery = await DB.get_pieces();
+  res.send(gallery); 
+});
 
-// Endpoints to implement:
-// -getArtwork
-// -uploadArtwork
-// -createUser
-// -getUser
-// -login
-// -logout
+//UploadPiece
+apiRouter.post('/newpiece', async (req, res) => {
+  DB.add_piece(req.body);
+  const gallery = await DB.get_pieces();
+  res.send(gallery); 
+})
 
-// _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+//CreateUser
+
+//GetUser
+
+//Login
+
+//Logout
 
 // Return the application's default page if the path is unknown
 app.use((_req, res) => {
    res.sendFile('index.html', { root: 'public' });
- });
+});
  
  app.listen(port, () => {
    console.log(`Listening on port ${port}`);
- });
+});

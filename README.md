@@ -34,3 +34,5 @@ Introducting Color Grid! Color Grid is an online application that allows you to 
 * How to install and use npm packages
 * How to use Express to create an HTTP service
 * How to create and utilize service endpoints
+* How to utilize MongoDB to store and retrieve data for an application
+* How to use environment variables to avoid exposing credentials and other secure information through your code

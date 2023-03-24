@@ -1,19 +1,23 @@
-let gallery = localStorage.getItem('gallery');
 let current_piece = 0;
 let size = 0;
+let gallery = [];
 
-if(gallery !== null) {
-   gallery = JSON.parse(gallery);
-   size = gallery.creations.length;
-   current_piece = size - 1;
-   load_piece(current_piece);
-} else {
-   document.getElementById('gallery-box').display = 'none';
-   document.querySelector('main').innerHTML = '<p>No artwork to display. Go make some art!'
+async function load_gallery() {
+   
 }
 
+// if(gallery !== null) {
+//    gallery = JSON.parse(gallery);
+//    size = gallery.creations.length;
+//    current_piece = size - 1;
+//    load_piece(current_piece);
+// } else {
+//    document.getElementById('gallery-box').display = 'none';
+//    document.querySelector('main').innerHTML = '<p>No artwork to display. Go make some art!'
+// }
+
 function load_piece(i) {
-   let piece = gallery.creations[i];
+   let piece = gallery[i];
    document.querySelectorAll('td').forEach((e, j) => {
       e.style.background = piece.grid[j];
    });
@@ -55,3 +59,5 @@ function update_buttons() {
       document.getElementById('rand-btn').disabled = true;
    }
 }
+
+load_gallery();

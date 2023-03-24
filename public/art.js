@@ -37,34 +37,18 @@ class Art {
       document.querySelector(`#${this.selected_color}-btn`).style.border = `solid 2px ${color === 'white' ? 'black' : 'white'}`;
    }
 
-   submit() {
-      let color_arr = [];
-      this.grid.forEach((e) => {
-         color_arr.push(e.style.background);
-      })
-
-      let t = document.getElementById('art-title').value;
-      if(t === "") {
-         t = 'Untitled Creation'
-      }
+   async submit() {
       
-      let creation = {
-         title: t,
-         artist: this.artist,
-         date: this.date,
-         grid: color_arr
-      };
+   }
 
-      let gallery = localStorage.getItem('gallery');
-      if(gallery === null) {
-         localStorage.setItem('gallery', JSON.stringify({creations: []}));
-         gallery = localStorage.getItem('gallery');
+   updateGalleryLocally(piece) {
+      let gallery = [];
+      const galleryText = localStorage.getItem('gallery');
+      if(galleryText) {
+         gallery = JSON.parse(galleryText);
       }
-      gallery = JSON.parse(gallery);
-      gallery.creations.push(creation);
-      localStorage.setItem('gallery', JSON.stringify(gallery));
-
-      window.location.href = "gallery.html";
+      gallery.push(piece);
+      localStorage.setItem('gallery', JSON.stringify(gallery))
    }
 }
 
