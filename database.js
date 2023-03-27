@@ -9,7 +9,7 @@ if(!userName) {
 }
 const url = `mongodb+srv://${userName}:${password}@${hostname}`;
 const client = new MongoClient(url);
-const gallery_collection = client.db('startup').collection('gallery');
+const gallery_collection = client.db('colorgrid').collection('gallery');
 
 function add_piece(piece) {
    gallery_collection.insertOne(piece);

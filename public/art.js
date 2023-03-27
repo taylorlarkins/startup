@@ -5,15 +5,12 @@ if(localStorage.getItem('current_user') === null) {
 class Art {
    artist;
    grid;
-   date;
    selected_color;
    colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'pink', 'brown', 'black', 'white'];
 
    constructor() {
       this.artist = localStorage.getItem("current_user");
       this.selected_color = "red";
-      let temp = new Date();
-      this.date = `${temp.getMonth() + 1}.${temp.getDate()}.${temp.getFullYear()}`;
       
       //Add 'click' eventListeners to all grid squares
       this.grid = document.querySelectorAll("td");
@@ -38,7 +35,34 @@ class Art {
    }
 
    async submit() {
-      
+      let temp = new Date();
+      let date = `${temp.getMonth() + 1}.${temp.getDate()}.${temp.getFullYear()}`;
+      let gridOfColors = [];
+      this.grid.forEach((e) => {
+         gridOfColors.push(e.style.background);
+      });
+
+      let piece = {
+         title: document.getElementById('art-title').value,
+         artist: this.artist,
+         date: date,
+         grid: gridOfColors
+      }
+
+      try {
+         const response = await fetch('/api/newpiece', {
+            method: 'POST',
+            headers: {'content-type': 'application/json'},
+            body: JSON.stringify(piece)
+         });
+
+         const gallery = await response.json()
+         localStorage.setItem('gallery', JSON.stringify(gallery));
+      } catch {
+         this.updateGalleryLocally(piece);
+      }
+
+      window.location.href = 'gallery.html';
    }
 
    updateGalleryLocally(piece) {
