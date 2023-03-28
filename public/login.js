@@ -1,29 +1,28 @@
-function login() {
-   const username = document.querySelector("#username").value;
-   const password = document.querySelector("#password").value;
+async function login_or_create(endpoint) {
+   const username = document.querySelector("#username")?.value;
+   const password = document.querySelector("#password")?.value;
+   const response = await fetch(endpoint, {
+      method: 'POST',
+      body: JSON.stringify({username: username, password: password}),
+      headers: {
+         'Content-type': 'application/json; charset=UTF-8',
+      }
+   });
    
-   if(username === "" || password === "") {
-      login_err("You must enter a username and a password!");
+   const body = await response.json();
+   if(response?.status === 200) {
+      localStorage.setItem('username', username);
+      window.location.href = 'create.html';
    } else {
-      let user_data = localStorage.getItem("user_data");
-      if(user_data === null) {
-         localStorage.setItem("user_data", JSON.stringify({}));
-      }
-      user_data = JSON.parse(localStorage.getItem("user_data"));
-
-      if(!(username in user_data)) {
-         user_data[username] = password;
-         localStorage.setItem("user_data", JSON.stringify(user_data))
-      }
-      correct_pass = user_data[username];
-
-      if(password === correct_pass) {
-         localStorage.setItem("current_user", username);
-         window.location.href = "create.html";
-      } else {
-         login_err("Password is incorrect!");
-      }
+      login_err(body.msg);
    }
+
+}
+
+function logout() {
+   fetch('/api/auth/logout', {
+      method: 'delete'
+   }).then(() => (window.location.href = 'index.html'));
 }
 
 function login_err(msg) {
