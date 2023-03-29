@@ -1,7 +1,3 @@
-if(localStorage.getItem('current_user') === null) {
-   localStorage.setItem('current_user', 'Anonymous')
-}
-
 class Art {
    artist;
    grid;
@@ -9,7 +5,7 @@ class Art {
    colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'pink', 'brown', 'black', 'white'];
 
    constructor() {
-      this.artist = localStorage.getItem("current_user");
+      this.artist = localStorage.getItem("username");
       this.selected_color = "red";
       
       //Add 'click' eventListeners to all grid squares

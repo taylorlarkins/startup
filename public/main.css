@@ -45,6 +45,14 @@ nav {
    width: 400px;
 }
 
+#signed-in {
+   text-align: center;
+   background-color: #231F20;
+   border-radius: 10px;
+   height: 400px;
+   width: 400px;
+}
+
 .grid-container {
    display: flex;
    flex-direction: column;
@@ -137,6 +145,15 @@ td {
 
 #welcome {
    padding-top: 0.5em;
+   animation: color-change 3s linear 0s infinite;
+}
+
+#current-user-label {
+   margin-bottom: 90px;
+}
+
+#current-user {
+   margin-bottom: 110px;
    animation: color-change 3s linear 0s infinite;
 }
 

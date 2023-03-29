@@ -42,6 +42,13 @@
             <button id="login-btn" class="btn btn-primary" onclick="login_or_create('/api/auth/login')">Login</button>
             <button id="login-btn" class="btn btn-success" onclick="login_or_create('/api/auth/create')">Create</button>
          </div>
+         <div id="signed-in" class="container-fluid text-light" style="display: none;">
+            <h3 id="welcome">Welcome!</h3>
+            <hr>
+            <h5 id="current-user-label">Current User:</h5>
+            <h1 id="current-user">User</h1>
+            <button id="login-btn" class="btn btn-danger" onclick="logout()">Logout</button>
+         </div>
       </main>
 
       <footer class="text-light">
