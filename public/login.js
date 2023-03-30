@@ -1,4 +1,5 @@
 async function load_home_page() {
+   document.getElementById('login').style.display = 'none';
    let user = await get_user(localStorage.getItem('username'));
    let authenticated = user?.authenticated;
    if(authenticated) {
@@ -11,12 +12,19 @@ async function load_home_page() {
    }
 }
 
-load_home_page();
-
 async function login_or_create(endpoint) {
    const username = document.querySelector("#username")?.value;
    const password = document.querySelector("#password")?.value;
-   const response = await fetch(endpoint, {
+   if(endpoint === 'create') {
+      if(username.length > 15) {
+         login_err('Username is too long!');
+         return;
+      } else if(username.length < 2 || password.length < 2) {
+         login_err('Username and/or Password is too short!');
+         return;
+      }
+   }
+   const response = await fetch(`/api/auth/${endpoint}`, {
       method: 'POST',
       body: JSON.stringify({username: username, password: password}),
       headers: {
@@ -31,7 +39,6 @@ async function login_or_create(endpoint) {
    } else {
       login_err(body.msg);
    }
-
 }
 
 function logout() {
@@ -62,3 +69,5 @@ function login_err(msg) {
    });
    p.then(() => errEl.style.visibility = "hidden");
 }
+
+load_home_page();

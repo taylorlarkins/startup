@@ -29,6 +29,7 @@
       </header>
 
       <main id="create-main" class="container-fluid">
+         <div id="invalid-title" class="alert alert-danger" style="display: none;">Your title is either too long or too short!</div>
          <div class="grid-container">
             <div class="title-set-container">
                <label for="art-title" class="text-light">Title:</label>
@@ -168,7 +169,7 @@
                   <td></td>
                </tr>
             </table>
-            <button class="btn btn-primary" onclick="art.submit()">Finish</button>
+            <button class="btn btn-primary" onclick="submit()">Finish</button>
          </div>
       </main>
 

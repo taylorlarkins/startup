@@ -1,23 +1,29 @@
 let gallery = [];
 
 async function load_gallery() {
-   try {
-      const response = await fetch('/api/gallery');
-      gallery = await response.json();
-      localStorage.setItem('gallery', JSON.stringify(gallery));
-   } catch {
-      const galleryText = localStorage.getItem('gallery');
-      if(galleryText) {
-         gallery = JSON.parse(galleryText);
+   let user = await get_user(localStorage.getItem('username'));
+   let authenticated = user?.authenticated;
+   if(authenticated) {
+      try {
+         const response = await fetch('/api/gallery');
+         gallery = await response.json();
+         localStorage.setItem('gallery', JSON.stringify(gallery));
+      } catch {
+         const galleryText = localStorage.getItem('gallery');
+         if(galleryText) {
+            gallery = JSON.parse(galleryText);
+         }
       }
-   }
-   if(gallery.length !== 0) {
-      load_piece(gallery.length - 1);
-      document.getElementById('gallery-box').style.display = 'flex';
-      localStorage.setItem('current-piece', gallery.length - 1);
+      if(gallery.length !== 0) {
+         load_piece(gallery.length - 1);
+         document.getElementById('gallery-loading').remove();
+         document.getElementById('gallery-box').style.display = 'flex';
+         localStorage.setItem('current-piece', gallery.length - 1);
+      } else {
+         document.querySelector('main').innerHTML = '<p>No artwork to display. Go make some art!</p>';
+      } 
    } else {
-      document.getElementById('gallery-box').display = 'none';
-      document.querySelector('main').innerHTML = '<p>No artwork to display. Go make some art!</p>'
+      document.querySelector('main').innerHTML = '<p>Sign in to view the gallery!</p>';
    }
 }
 
@@ -70,6 +76,17 @@ function update_buttons(current_piece) {
    if(gallery.length === 1) {
       document.getElementById('rand-btn').disabled = true;
    }
+}
+
+async function get_user(username) {
+   if(username === null) {
+      return null;
+   }
+   const response = await fetch(`/api/user/${username}`);
+   if(response.status === 200) {
+      return response.json();
+   }
+   return null;
 }
 
 load_gallery();

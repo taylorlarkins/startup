@@ -145,7 +145,6 @@ td {
 
 #welcome {
    padding-top: 0.5em;
-   animation: color-change 3s linear 0s infinite;
 }
 
 #current-user-label {
