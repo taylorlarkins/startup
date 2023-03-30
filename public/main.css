@@ -143,6 +143,10 @@ td {
    height: 30px;
 }
 
+#invalid-title {
+   position: absolute;
+}
+
 #welcome {
    padding-top: 0.5em;
 }
