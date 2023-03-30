@@ -39,3 +39,4 @@ Introducting Color Grid! Color Grid is an online application that allows you to 
 * How to implement user authorization with a database
 * How to use cookies for authorization
 * How to create secure endpoints that require prior authorization to access
+* How to use websockets for peer to peer communication
