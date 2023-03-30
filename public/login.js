@@ -1,5 +1,4 @@
 async function load_home_page() {
-   document.getElementById('login').style.display = 'none';
    let user = await get_user(localStorage.getItem('username'));
    let authenticated = user?.authenticated;
    if(authenticated) {

@@ -73,7 +73,9 @@ function updateGalleryLocally(piece) {
 async function load_create_page() {
    let user = await get_user(localStorage.getItem('username'));
    let authenticated = user?.authenticated;
-   if(!authenticated) {
+   if(authenticated) {
+      document.querySelector('.grid-container').style.display = 'flex';
+   } else {
       document.querySelector('main').innerHTML = '<p>Sign in to create artwork!</p>';
       return null;
    }
