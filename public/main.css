@@ -143,6 +143,10 @@ td {
    height: 30px;
 }
 
+#quote-container {
+   text-align: center;
+}
+
 #invalid-title {
    position: absolute;
 }
