@@ -54,7 +54,7 @@ nav {
 }
 
 .grid-container {
-   display: flex;
+   position: absolute;
    flex-direction: column;
    align-items: center;
    justify-content: space-evenly;
@@ -145,6 +145,21 @@ td {
 
 #quote-container {
    text-align: center;
+}
+
+#msg-board {
+   width: 100%;
+   height: 100%;
+}
+
+.system-event {
+   font-weight: bold;
+   color: #528491;
+}
+
+.artist-event {
+   font-weight: bold;
+   color: #915284;
 }
 
 #invalid-title {

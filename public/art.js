@@ -1,6 +1,12 @@
+//Event Messages
+const CREATE_PIECE = 'create_piece';
+const UPLOAD_PIECE = 'upload_piece';
+
 let selected_color = 'red';
 let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'pink', 'brown', 'black', 'white'];
 let grid = document.querySelectorAll("td");
+let socket;
+
 grid.forEach((e) => {
    e.addEventListener('click', () => {
       e.style.background = selected_color;
@@ -53,6 +59,7 @@ async function submit() {
 
       const gallery = await response.json()
       localStorage.setItem('gallery', JSON.stringify(gallery));
+      broadcast_event(piece.artist, UPLOAD_PIECE, piece.title);
    } catch {
       this.updateGalleryLocally(piece);
    }
@@ -75,6 +82,9 @@ async function load_create_page() {
    let authenticated = user?.authenticated;
    if(authenticated) {
       document.querySelector('.grid-container').style.display = 'flex';
+      configure_web_socket();
+      await delay(2000);
+      broadcast_event(user.username, CREATE_PIECE, null);
    } else {
       document.querySelector('main').innerHTML = '<p>Sign in to create artwork!</p>';
       return null;
@@ -102,6 +112,41 @@ function art_err(msg) {
       }, 3000);
    });
    p.then(() => errEl.style.display = "none");
+}
+
+function configure_web_socket() {
+   const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+   socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+   socket.onopen = (event) => {
+      display_message('system', 'CreationZone', 'Connected! &#x2705');
+   };
+   socket.onclose = (event) => {
+      display_message('system', 'CreationZone', 'Disconnected! &#x1F480');
+   };
+   socket.onmessage = async (event) => {
+      const msg = JSON.parse(await event.data.text());
+      if(msg.type === CREATE_PIECE) {
+         display_message('artist', msg.from, 'started working on a new piece! &#x1F3A8');
+      } else if (msg.type === UPLOAD_PIECE) {
+         display_message('artist', msg.from, `uploaded a piece titled: ${msg.title} &#x1F389`);
+      }
+   };
+}
+
+function display_message(cls, from, msg) {
+   const player_messages = document.querySelector('#player-messages');
+   player_messages.innerHTML = `<div><span class="${cls}-event">${from}</span> ${msg}</div>` + player_messages.innerHTML;
+}
+
+function broadcast_event(from, type, title) {
+   const event = { from: from, type: type, title: title};
+   socket.send(JSON.stringify(event));
+}
+
+function delay(time) {
+   return new Promise((res) => {
+      setTimeout(res, time);
+   })
 }
 
 load_create_page();
