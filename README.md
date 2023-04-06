@@ -40,3 +40,6 @@ Introducting Color Grid! Color Grid is an online application that allows you to 
 * How to use cookies for authorization
 * How to create secure endpoints that require prior authorization to access
 * How to use websockets for peer to peer communication
+* How React works as a web framework
+* The benefits of using a web framework for web development
+* How to use a CLI to set up a React project
