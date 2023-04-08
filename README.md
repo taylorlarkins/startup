@@ -43,3 +43,5 @@ Introducting Color Grid! Color Grid is an online application that allows you to 
 * How React works as a web framework
 * The benefits of using a web framework for web development
 * How to use a CLI to set up a React project
+* How to utilize a React router to convert a multipage application into a single page application
+* How to split code up into React componenets to make web development easier and more organized
